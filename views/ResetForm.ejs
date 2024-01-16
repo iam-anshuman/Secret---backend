@@ -108,8 +108,8 @@ button:hover{
 						confirmPassword: confirmNewPassword.value
 					})
 				}).then((res) => res.json()).then((data) => {
-					alert("Message: ",data);
-					console.log(data);
+					alert("Message: Password has been updated",);
+					console.log("Password Has been Updated");
 					window.close();
 				}).catch((err) => {
 					console.log("Error: ",err);
