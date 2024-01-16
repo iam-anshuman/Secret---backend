@@ -17,7 +17,7 @@ const handleForgetPassword = async (req,res)=>{
         const secret = userDetail.password + userDetail._id  + userDetail.createdAt;
 
         const token = jwt.sign({id:userDetail._id},secret,{expiresIn:"15m"});
-        const link = `http://localhost:8080/auth/reset-password/${userDetail._id}/${token}`;
+        const link = `https://secret-service-pb1n.onrender.com/auth/reset-password/${userDetail._id}/${token}`;
 
         res.status(200).json({message:"Email sent successfully"});
         mailer(email,link);
