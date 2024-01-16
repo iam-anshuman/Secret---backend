@@ -109,6 +109,7 @@ button:hover{
 					})
 				}).then((res) => res.json()).then((data) => {
 					alert("Message: ",data);
+					console.log(data);
 					window.close();
 				}).catch((err) => {
 					console.log("Error: ",err);
