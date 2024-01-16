@@ -98,7 +98,7 @@ button:hover{
                const currentLink = window.location.href;
 			   const userID = currentLink.split('/')[5];
 			   const token = currentLink.split('/')[6];
-				fetch(`http://localhost:8080/auth/set-new-password/${userID}/${token}`, {
+				fetch(`https://secret-service-pb1n.onrender.com/auth/set-new-password/${userID}/${token}`, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
