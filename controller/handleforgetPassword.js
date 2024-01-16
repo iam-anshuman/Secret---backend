@@ -19,7 +19,7 @@ const handleForgetPassword = async (req,res)=>{
         const token = jwt.sign({id:userDetail._id},secret,{expiresIn:"15m"});
         const link = `http://localhost:8080/auth/reset-password/${userDetail._id}/${token}`;
 
-        res.status(200).json({message:"Email sent successfully",link});
+        res.status(200).json({message:"Email sent successfully"});
         mailer(email,link);
 
     }catch(err){
@@ -72,7 +72,7 @@ const handleSetNewPassword = async(req,res)=>{
         const hashedPassword = await bcrypt.hash(password,salt);
 
         const response = await user.findByIdAndUpdate(id,{password:hashedPassword});
-        console.log(response);
+        // console.log(response);
         res.status(200).json({message:"Password updated successfully"});
 
     }catch(err){

@@ -108,7 +108,8 @@ button:hover{
 						confirmPassword: confirmNewPassword.value
 					})
 				}).then((res) => res.json()).then((data) => {
-					console.log("data: ",data);
+					alert("Message: ",data);
+					window.close();
 				}).catch((err) => {
 					console.log("Error: ",err);
 				});

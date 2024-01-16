@@ -13,6 +13,9 @@ const transporter = nodemailer.createTransport({
 
 
 async function mailer(tomMail,resetLink) {
+    try {
+        
+
   // send mail with defined transport object
 const info = await transporter.sendMail({
     from: process.env.GMAIL, // sender address
@@ -104,7 +107,9 @@ const info = await transporter.sendMail({
   });
 
   console.log("Message sent: %s", info);
-
+} catch (error) {
+      console.error("Error sending email: ", error);  
+}
 }
 
 module.exports = {mailer};
