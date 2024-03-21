@@ -16,7 +16,9 @@ mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING).then(()=>{
 const app = express();
 const PORT = 8080;
 
-app.use(cors());
+app.use(cors({
+    origin:"*",
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
